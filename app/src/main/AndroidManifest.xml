@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.muzimp.keyboard">
+
+    <application
+        android:label="Muzimp -klavye-"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <service
+            android:name=".MuzimpKeyboardService"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/muzimp_method" />
+        </service>
+
+    </application>
+
+</manifest>
